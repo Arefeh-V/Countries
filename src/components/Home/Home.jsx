@@ -49,7 +49,7 @@ const Home = () => {
                 <div className="p-3">
                   <a
                     className="font-semibold text-center mb-4 w-full"
-                    href={"/detail/" + (item?.alpha3Code || item?.alpha2Code)}
+                    href={"/Countries/detail/" + (item?.alpha3Code || item?.alpha2Code)}
                     // onClick={() => {
                     //   history.push(
                     //     "/detail/" + (item?.alpha3Code || item?.alpha2Code)
