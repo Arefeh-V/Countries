@@ -18,11 +18,11 @@ function App() {
       <Router>
         <ScrollToTop />
         <Switch>
-          <Route exact path="/detail/:slug" component={Detail} />
+          <Route exact path="/Countries/detail/:slug" component={Detail} />
 
-          <Route exact path="/" component={Home} />
+          <Route exact path="/Countries" component={Home} />
           <Route component={Error404} />
-          <Redirect from="*" to="/404" />
+          <Redirect from="*" to="/Countries/404" />
         </Switch>
       </Router>
     </div>
