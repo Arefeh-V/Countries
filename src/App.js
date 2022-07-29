@@ -15,7 +15,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <Router basename={process.env.PUBLIC_URL}>
         <ScrollToTop />
         <Switch>
           <Route exact path="/Countries/detail/:slug" component={Detail} />
