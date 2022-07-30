@@ -1,6 +1,7 @@
 import React from "react";
 import {
   BrowserRouter as Router,
+  HashRouter,
   Switch,
   Route,
   Redirect,
@@ -15,16 +16,18 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Router basename={process.env.PUBLIC_URL}>
-        <ScrollToTop />
-        <Switch>
-          <Route exact path="/Countries/detail/:slug" component={Detail} />
+      <React.StrictMode>
+        <HashRouter basename='/'>
+          <ScrollToTop />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/detail/:slug" component={Detail} />
 
-          <Route exact path="/Countries" component={Home} />
-          <Route component={Error404} />
-          <Redirect from="*" to="/Countries/404" />
-        </Switch>
-      </Router>
+            <Route component={Error404} />
+            <Redirect from="*" to="/404" />
+          </Switch>
+        </HashRouter>
+      </React.StrictMode>
     </div>
   );
 }
