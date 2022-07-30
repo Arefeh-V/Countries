@@ -98,7 +98,7 @@ const Home = () => {
               {countryData?.borders?.map((item) => (
                 <a
                   key={item}
-                  href={"/Countries/detail/" + item}
+                  href={"/detail/" + item}
                   // onClick={() => {
                   //   history.replace("/detail/" + item);
                   // }}
