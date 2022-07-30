@@ -6,6 +6,21 @@ import { Link } from "react-router-dom";
 
 class Error404 extends Component {
   state = {};
+  // componentDidMount(){
+  //   var pathSegmentsToKeep = 1;
+
+  //   var l = window.location;
+  //   l.replace(
+  //     l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+  //     l.pathname.split('/').slice(0, 1 + pathSegmentsToKeep).join('/') + '/?/' +
+  //     l.pathname.slice(1).split('/').slice(pathSegmentsToKeep).join('/').replace(/&/g, '~and~') +
+  //     (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+  //     l.hash
+  //   );
+  // }
+  
+  
+  
   render() {
     return (
       <div>

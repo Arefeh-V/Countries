@@ -1,24 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 // import { useHistory } from "react-router-dom";
-// import { getCountries } from "./HomeAPI";
+import { getCountries } from "./HomeAPI";
 import Navbar from "../Navbar";
 import Filters from "./Filters";
 
 const Home = () => {
   const [countriesData, setcountriesData] = useState([]);
   const [loading, setLoading] = useState(false);
-  //   const history = useHistory();
-  //   const loadData = async () => {
-  //     setLoading(true);
-  //     const DATA = await getCountries();
-  //     setLoading(false);
+    // const history = useHistory();
+    const loadData = async () => {
+      setLoading(true);
+      const DATA = await getCountries();
+      setLoading(false);
 
-  //     console.log("DATA:", DATA);
-  //     setcountriesData(DATA);
-  //   };
-  //   useEffect(() => {
-  //     loadData();
-  //   }, []);
+      console.log("DATA:", DATA);
+      setcountriesData(DATA);
+    };
+    useEffect(() => {
+      loadData();
+    }, []);
 
   return (
     <>
