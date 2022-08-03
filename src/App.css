@@ -7,6 +7,13 @@ html {
   /* font-style: normal;
   font-weight: 300; */
 }
+#light {
+  background-color: white;
+}
+#dark {
+  background-color: rgb(41 50 60);
+  color: #fff;
+}
 .wrapper {
   max-width: 1280px;
   margin: 0 auto;
@@ -25,6 +32,7 @@ textarea {
 }
 input::placeholder {
   font-size: 12px !important;
+  font-weight: normal;
   /* padding: 4px; */
 }
 a {

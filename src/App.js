@@ -1,11 +1,13 @@
 import React from "react";
 import {
   BrowserRouter as Router,
-  HashRouter,
   Switch,
   Route,
   Redirect,
 } from "react-router-dom";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "./redux/store";
 
 import Home from "./components/Home/Home";
 import Detail from "./components/Detail/Detail";
@@ -16,18 +18,22 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <React.StrictMode>
-        <HashRouter basename='/'>
-          <ScrollToTop />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route path="/detail/:slug" component={Detail} />
+      {/* // "homepage": "https://Arefeh-V.github.io/Countries", */}
 
-            <Route component={Error404} />
-            <Redirect from="*" to="/404" />
-          </Switch>
-        </HashRouter>
-      </React.StrictMode>
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Router>
+            <ScrollToTop />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/detail/:slug" component={Detail} />
+
+              <Route component={Error404} />
+              <Redirect from="*" to="/404" />
+            </Switch>
+          </Router>
+        </PersistGate>
+      </Provider>
     </div>
   );
 }

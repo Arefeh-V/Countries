@@ -12,7 +12,6 @@ export const getCountriySearch = async (name) => {
 
 export const getCountriyByContinent = async (name) => {
   const endpoint = `https://restcountries.com/v3.1/region/${name}`;
-  debugger
   const data = await (await fetch(endpoint)).json();
   return data;
 };
